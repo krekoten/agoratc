@@ -1,25 +1,18 @@
 import React from "react"
-import logo from "./logo.svg"
+import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import Container from "@mui/material/Container"
 import "./App.css"
+import { Typography } from "@mui/material"
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm" sx={{p: 2}}>
+      <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <Typography variant="h5">Agoracom - Tech Challenge - Quiz</Typography>
+        <Button className="start" variant="contained">Start the Quiz</Button>
+      </Box>
+    </Container>
   )
 }
 
