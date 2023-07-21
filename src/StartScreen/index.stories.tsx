@@ -13,5 +13,5 @@ export default meta
 type Story = StoryObj<typeof StartScreen>
 
 export const Layout: Story = {
-  render: () => <StartScreen />,
+  render: () => <StartScreen onStart={() => {}} />,
 };

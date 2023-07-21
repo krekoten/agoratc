@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Container from "@mui/material/Container"
+import { Container, Typography } from "@mui/material"
 
 import StartScreen from "./StartScreen"
 import QuestionScreen from "./QuestionScreen"
@@ -16,22 +16,18 @@ enum appState {
   SCORE = "score"
 }
 
-function renderQuestions(questions: Question[]): JSX.Element {
+function App(): JSX.Element {
+  const [score, setScore] = useState(0)
+  const [state, setState] = useState<appState>(appState.STARTED)
   const [questionNumber, setQuestionNumber] = useState(0)
 
   const question: Question = questions[questionNumber]
 
-  return <QuestionScreen {...question} />
-}
-
-function App(): JSX.Element {
-  const [score, setScore] = useState(0)
-  const [state, setState] = useState<appState>(appState.STARTED)
-
   return (
     <Container maxWidth="sm" sx={{p: 2}}>
-      {state === appState.STARTED && <StartScreen />}
-      {state === appState.QUESTIONS && renderQuestions(questions)}
+      <Typography variant="h4">Agoracom - Tech Challenge - Quiz</Typography>
+      {state === appState.STARTED && <StartScreen onStart={() => setState(appState.QUESTIONS)} />}
+      {state === appState.QUESTIONS && <QuestionScreen {...question} />}
       {state === appState.SCORE && <ScoreScreen score={score} />}
     </Container>
   )
