@@ -3,20 +3,19 @@ import QuestionText from ".";
 import { render, screen } from "@testing-library/react"
 
 describe("QuestionText", () => {
-  let question: HTMLElement|null = null;
+  const questionText = "some question"
 
-  beforeAll(() => {
-    const questionText = "some question"
+  beforeEach(() => {
     render(<QuestionText text={questionText} />)
-  
-    question = screen.getByText(questionText)
   })
 
   it("contains question section", () => {
+    const question = screen.getByText(questionText)
     expect(question).toBeInTheDocument()
   })
 
   it("has question class", () => {
+    const question = screen.getByText(questionText)
     expect(question).toHaveClass("question")
   })
 })

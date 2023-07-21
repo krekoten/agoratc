@@ -1,11 +1,9 @@
 import React from "react"
 
 import QuestionText from "./QuestionText"
+import Answers from "./Answers"
 
-interface Answer {
-  text: string,
-  correct: boolean
-}
+import { Answer } from "../types"
 
 interface QuestionParams {
   text: string,
@@ -15,6 +13,7 @@ interface QuestionParams {
 function Question({text, answers}: QuestionParams): JSX.Element {
   return <>
     <QuestionText text={text} />
+    <Answers answers={answers} />
   </>
 }
 
