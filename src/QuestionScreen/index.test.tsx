@@ -1,8 +1,8 @@
 import React from "react"
-import Question from ".";
+import QuestionScreen from ".";
 import { render, screen } from "@testing-library/react"
 
-describe("Question", () => {
+describe("QuestionScreen", () => {
   const questionText = "some question"
   const answers = [
     {text: "Answer 1", correct: false},
@@ -10,7 +10,7 @@ describe("Question", () => {
   ]
 
   beforeEach(() => {
-    render(<Question text={questionText} answers={answers} />)
+    render(<QuestionScreen text={questionText} answers={answers} />)
   })
 
   it("contains question section", () => {

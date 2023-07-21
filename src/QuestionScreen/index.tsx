@@ -12,7 +12,7 @@ interface QuestionParams {
   answers: Answer[]
 }
 
-function Question({text, answers}: QuestionParams): JSX.Element {
+function QuestionScreen({text, answers}: QuestionParams): JSX.Element {
   return <>
     <QuestionText text={text} />
     <Answers answers={answers} />
@@ -20,4 +20,4 @@ function Question({text, answers}: QuestionParams): JSX.Element {
   </>
 }
 
-export default Question
+export default QuestionScreen

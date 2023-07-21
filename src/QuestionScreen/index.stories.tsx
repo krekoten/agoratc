@@ -2,15 +2,15 @@ import React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Question from '.'
+import QuestionScreen from '.'
 
-const meta: Meta<typeof Question> = {
-  component: Question,
+const meta: Meta<typeof QuestionScreen> = {
+  component: QuestionScreen,
 }
 
 export default meta
 
-type Story = StoryObj<typeof Question>
+type Story = StoryObj<typeof QuestionScreen>
 
 const questionText = "some question"
 const answers = [
@@ -19,5 +19,5 @@ const answers = [
 ]
 
 export const Layout: Story = {
-  render: () => <Question text={questionText} answers={answers} />,
+  render: () => <QuestionScreen text={questionText} answers={answers} />,
 };
