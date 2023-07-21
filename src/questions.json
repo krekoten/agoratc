@@ -1,0 +1,47 @@
+[
+  {
+    "text": "Which is the largest country in the world by population?",
+    "answers": [
+      {"text": "India", "correct": false},
+      {"text": "USA", "correct": false},
+      {"text": "China", "correct": true},
+      {"text": "Russia", "correct": false}
+    ]
+  },
+  {
+    "text": "When did the second world war end?",
+    "answers": [
+      {"text": "1945", "correct": true},
+      {"text": "1939", "correct": false},
+      {"text": "1944", "correct": false},
+      {"text": "1942", "correct": false}
+    ]
+  },
+  {
+    "text": "Which was the first country to issue paper currency?",
+    "answers": [
+      {"text": "France", "correct": false},
+      {"text": "USA", "correct": false},
+      {"text": "China", "correct": true},
+      {"text": "Italy", "correct": false}
+    ]
+  },
+  {
+    "text": "Which city hosted the 1996 Summer Olympics?",
+    "answers": [
+      {"text": "Atlanta", "correct": true},
+      {"text": "Sydney", "correct": false},
+      {"text": "Athens", "correct": false},
+      {"text": "Beijing", "correct": false}
+    ]
+  },
+  {
+    "text": "Who invented the telephone?",
+    "answers": [
+      {"text": "Albert Einstein", "correct": false},
+      {"text": "Alexander Graham Bell", "correct": true},
+      {"text": "Isaac Newton", "correct": false},
+      {"text": "Marie Curie", "correct": false}
+    ]
+  }
+]
