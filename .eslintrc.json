@@ -7,7 +7,8 @@
     "extends": [
         "standard-with-typescript",
         "plugin:react/recommended",
-        "prettier"
+        "prettier",
+        "plugin:storybook/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,13 +17,14 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": ["./tsconfig.json"]
+        "project": [
+            "./tsconfig.json"
+        ]
     },
     "plugins": [
         "react"
     ],
-    "rules": {
-    },
+    "rules": {},
     "settings": {
         "import/resolver": {
             "typescript": {}

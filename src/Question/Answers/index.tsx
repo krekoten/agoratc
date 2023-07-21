@@ -1,16 +1,17 @@
 import React from "react"
-import { Answer } from "../../types"
+import type { Answer } from "../../types"
+
+import AnswerItem from "./AnswerItem"
+import { RadioGroup } from "@mui/material"
 
 interface AnswersParams {
   answers: Answer[]
 }
 
 function Answers({ answers }: AnswersParams): JSX.Element {
-  return <div data-testid="answers" className="options">
-    {answers.map(({ text }, index) => {
-      return <span key={index}>{text}</span>
-    })}
-  </div>
+  return <RadioGroup data-testid="answers" className="options">
+    {answers.map(({ text, correct }, index) => <AnswerItem text={text} correct={correct} key={index} />)}
+  </RadioGroup>
 }
 
 export default Answers

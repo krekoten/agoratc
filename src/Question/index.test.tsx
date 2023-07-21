@@ -23,4 +23,11 @@ describe("Question", () => {
       expect(screen.getByText(answerText)).toBeInTheDocument()
     })
   })
+
+  it("contains Next button", () => {
+    const nextButton = screen.getByRole("button", { name: "Next" })
+
+    expect(nextButton).toBeInTheDocument()
+    expect(nextButton).toHaveClass("next")
+  })
 })
