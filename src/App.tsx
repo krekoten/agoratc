@@ -6,7 +6,6 @@ import QuestionScreen from "./QuestionScreen"
 
 import type { Question } from "./types"
 
-import questions from "./questions.json"
 import ScoreScreen from "./ScoreScreen"
 
 enum appState {
@@ -17,7 +16,11 @@ enum appState {
 
 const correctAnswerPoints = 1
 
-function App(): JSX.Element {
+interface AppParams {
+  questions: Question[]
+}
+
+function App({ questions }: AppParams): JSX.Element {
   const [score, setScore] = useState(0)
   const [state, setState] = useState<appState>(appState.STARTED)
   const [questionNumber, setQuestionNumber] = useState(0)

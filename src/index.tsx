@@ -7,6 +7,7 @@ import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import "./index.css"
+import questions from "./questions.json"
 import App from "./App"
 import theme from "./theme"
 import reportWebVitals from "./reportWebVitals"
@@ -16,7 +17,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <App questions={questions} />
     </ThemeProvider>
   </React.StrictMode>,
 )
