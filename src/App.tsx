@@ -16,6 +16,8 @@ enum appState {
   SCORE = "score"
 }
 
+const correctAnswerPoints = 1
+
 function App(): JSX.Element {
   const [score, setScore] = useState(0)
   const [state, setState] = useState<appState>(appState.STARTED)
@@ -23,11 +25,24 @@ function App(): JSX.Element {
 
   const question: Question = questions[questionNumber]
 
+  function nextQuestionOrScore(): void {
+    if (questionNumber < questions.length - 1) {
+      setQuestionNumber(questionNumber + 1)
+    } else {
+      setState(appState.SCORE)
+    }
+  }
+
+  function onCorrectAnswer(): void {
+    setScore(score + correctAnswerPoints)
+    nextQuestionOrScore()
+  }
+
   return (
     <Container maxWidth="sm" sx={{p: 2}}>
       <Typography variant="h4">Agoracom - Tech Challenge - Quiz</Typography>
-      {state === appState.STARTED && <StartScreen onStart={() => setState(appState.QUESTIONS)} />}
-      {state === appState.QUESTIONS && <QuestionScreen {...question} />}
+      {state === appState.STARTED && <StartScreen onStart={() => { setState(appState.QUESTIONS) }} />}
+      {state === appState.QUESTIONS && <QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={nextQuestionOrScore} />}
       {state === appState.SCORE && <ScoreScreen score={score} />}
     </Container>
   )

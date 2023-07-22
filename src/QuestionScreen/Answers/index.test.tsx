@@ -8,8 +8,10 @@ describe("Answers", () => {
     {text: "Answer 2", correct: true}
   ]
 
+  const onChange = jest.fn()
+
   beforeEach(() => {
-    render(<Answers answers={answers} />)
+    render(<Answers answers={answers} value={null} onChange={onChange} />)
   })
 
   it("has class options", () => {

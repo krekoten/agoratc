@@ -5,12 +5,14 @@ import AnswerItem from "./AnswerItem"
 import { RadioGroup } from "@mui/material"
 
 interface AnswersParams {
-  answers: Answer[]
+  answers: Answer[],
+  value: number | null,
+  onChange: (value: string) => void
 }
 
-function Answers({ answers }: AnswersParams): JSX.Element {
-  return <RadioGroup data-testid="answers" className="options">
-    {answers.map(({ text, correct }, index) => <AnswerItem text={text} correct={correct} key={index} />)}
+function Answers({ answers, value, onChange }: AnswersParams): JSX.Element {
+  return <RadioGroup data-testid="answers" className="options" value={value} onChange={(_, radioValue) => { onChange(radioValue) }}>
+    {answers.map(({ text }, index) => <AnswerItem text={text} value={index} key={text} />)}
   </RadioGroup>
 }
 

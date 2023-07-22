@@ -3,10 +3,13 @@ import React from "react"
 import FormControlLabel from "@mui/material/FormControlLabel"
 import Radio from "@mui/material/Radio"
 
-import type { Answer } from "../../../types"
+interface AnswerItemParams {
+  text: string,
+  value: number
+}
 
-function AnswerItem({text, correct}: Answer): JSX.Element {
-  return <FormControlLabel value={correct} control={<Radio />} label={text} />
+function AnswerItem({text, value}: AnswerItemParams): JSX.Element {
+  return <FormControlLabel value={value} name={text} control={<Radio />} label={text} />
 }
 
 export default AnswerItem

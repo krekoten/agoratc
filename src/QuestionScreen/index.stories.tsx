@@ -12,12 +12,17 @@ export default meta
 
 type Story = StoryObj<typeof QuestionScreen>
 
-const questionText = "some question"
-const answers = [
-  {text: "Answer 1", correct: false},
-  {text: "Answer 2", correct: true}
-]
+const question = {
+  text: "some question",
+  answers: [
+    {text: "Answer 1", correct: false},
+    {text: "Answer 2", correct: true}
+  ]
+}
+
+const onCorrectAnswer = () => {}
+const onIncorrectAnswer = () => {}
 
 export const Layout: Story = {
-  render: () => <QuestionScreen text={questionText} answers={answers} />,
+  render: () => <QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={onIncorrectAnswer} />,
 };
