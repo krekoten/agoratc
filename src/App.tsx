@@ -6,7 +6,6 @@ import QuestionScreen from "./QuestionScreen"
 
 import type { Question } from "./types"
 
-import "./App.css"
 import questions from "./questions.json"
 import ScoreScreen from "./ScoreScreen"
 
