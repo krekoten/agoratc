@@ -20,8 +20,8 @@ const question = {
   ],
 }
 
-const onCorrectAnswer = () => {}
-const onIncorrectAnswer = () => {}
+const onCorrectAnswer = (): void => {}
+const onIncorrectAnswer = (): void => {}
 
 export const Layout: Story = {
   render: () => (
