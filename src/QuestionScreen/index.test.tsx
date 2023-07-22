@@ -1,23 +1,29 @@
 import React from "react"
-import QuestionScreen from ".";
+import QuestionScreen from "."
 import { render, screen, fireEvent } from "@testing-library/react"
 
 describe("QuestionScreen", () => {
   const questionText = "some question"
   const answers = [
-    {text: "Answer 1", correct: false},
-    {text: "Answer 2", correct: true}
+    { text: "Answer 1", correct: false },
+    { text: "Answer 2", correct: true },
   ]
   const question = {
     text: questionText,
-    answers
+    answers,
   }
 
   const onCorrectAnswer = jest.fn()
   const onIncorrectAnswer = jest.fn()
 
   beforeEach(() => {
-    render(<QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={onIncorrectAnswer} />)
+    render(
+      <QuestionScreen
+        question={question}
+        onCorrectAnswer={onCorrectAnswer}
+        onIncorrectAnswer={onIncorrectAnswer}
+      />,
+    )
   })
 
   it("contains question section", () => {

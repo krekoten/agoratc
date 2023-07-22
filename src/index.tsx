@@ -8,7 +8,7 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import "./index.css"
 import App from "./App"
-import theme from './theme'
+import theme from "./theme"
 import reportWebVitals from "./reportWebVitals"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)

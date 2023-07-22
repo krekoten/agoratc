@@ -1,9 +1,9 @@
 export interface Answer {
-  text: string,
+  text: string
   correct: boolean
 }
 
 export interface Question {
-  text: string,
+  text: string
   answers: Answer[]
 }

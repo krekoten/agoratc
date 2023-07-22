@@ -1,5 +1,5 @@
 import React from "react"
-import ScoreScreen from ".";
+import ScoreScreen from "."
 import { render, screen, fireEvent } from "@testing-library/react"
 
 describe("ScoreScreen", () => {
@@ -19,7 +19,7 @@ describe("ScoreScreen", () => {
 
   it("renders Restart button", () => {
     const restartButton = screen.getByRole("button", { name: "Restart" })
-    
+
     expect(restartButton).toBeInTheDocument()
     expect(restartButton).toHaveClass("restart")
   })

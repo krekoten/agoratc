@@ -4,11 +4,11 @@ import FormControlLabel from "@mui/material/FormControlLabel"
 import Radio from "@mui/material/Radio"
 
 interface AnswerItemParams {
-  text: string,
+  text: string
   value: number
 }
 
-function AnswerItem({text, value}: AnswerItemParams): JSX.Element {
+function AnswerItem({ text, value }: AnswerItemParams): JSX.Element {
   return <FormControlLabel value={value} name={text} control={<Radio />} label={text} />
 }
 

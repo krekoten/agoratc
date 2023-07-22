@@ -13,7 +13,7 @@ import ScoreScreen from "./ScoreScreen"
 enum appState {
   STARTED = "started",
   QUESTIONS = "questions",
-  SCORE = "score"
+  SCORE = "score",
 }
 
 const correctAnswerPoints = 1
@@ -45,10 +45,22 @@ function App(): JSX.Element {
   }
 
   return (
-    <Container maxWidth="sm" sx={{p: 2}}>
+    <Container maxWidth="sm" sx={{ p: 2 }}>
       <Typography variant="h4">Agoracom - Tech Challenge - Quiz</Typography>
-      {state === appState.STARTED && <StartScreen onStart={() => { setState(appState.QUESTIONS) }} />}
-      {state === appState.QUESTIONS && <QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={nextQuestionOrScore} />}
+      {state === appState.STARTED && (
+        <StartScreen
+          onStart={() => {
+            setState(appState.QUESTIONS)
+          }}
+        />
+      )}
+      {state === appState.QUESTIONS && (
+        <QuestionScreen
+          question={question}
+          onCorrectAnswer={onCorrectAnswer}
+          onIncorrectAnswer={nextQuestionOrScore}
+        />
+      )}
       {state === appState.SCORE && <ScoreScreen score={score} onRestart={onRestart} />}
     </Container>
   )

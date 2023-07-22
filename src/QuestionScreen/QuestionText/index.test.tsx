@@ -1,5 +1,5 @@
 import React from "react"
-import QuestionText from ".";
+import QuestionText from "."
 import { render, screen } from "@testing-library/react"
 
 describe("QuestionText", () => {

@@ -1,11 +1,11 @@
 import React from "react"
-import Answers from ".";
+import Answers from "."
 import { render, screen, within } from "@testing-library/react"
 
 describe("Answers", () => {
   const answers = [
-    {text: "Answer 1", correct: false},
-    {text: "Answer 2", correct: true}
+    { text: "Answer 1", correct: false },
+    { text: "Answer 2", correct: true },
   ]
 
   const onChange = jest.fn()

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from "@storybook/react"
 
-import ScoreScreen from '.'
+import ScoreScreen from "."
 
 const meta: Meta<typeof ScoreScreen> = {
   component: ScoreScreen,
@@ -14,4 +14,4 @@ type Story = StoryObj<typeof ScoreScreen>
 
 export const Layout: Story = {
   render: () => <ScoreScreen score={5} onRestart={() => {}} />,
-};
+}

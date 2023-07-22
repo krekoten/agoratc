@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from "@storybook/react"
 
-import QuestionScreen from '.'
+import QuestionScreen from "."
 
 const meta: Meta<typeof QuestionScreen> = {
   component: QuestionScreen,
@@ -15,14 +15,20 @@ type Story = StoryObj<typeof QuestionScreen>
 const question = {
   text: "some question",
   answers: [
-    {text: "Answer 1", correct: false},
-    {text: "Answer 2", correct: true}
-  ]
+    { text: "Answer 1", correct: false },
+    { text: "Answer 2", correct: true },
+  ],
 }
 
 const onCorrectAnswer = () => {}
 const onIncorrectAnswer = () => {}
 
 export const Layout: Story = {
-  render: () => <QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={onIncorrectAnswer} />,
-};
+  render: () => (
+    <QuestionScreen
+      question={question}
+      onCorrectAnswer={onCorrectAnswer}
+      onIncorrectAnswer={onIncorrectAnswer}
+    />
+  ),
+}

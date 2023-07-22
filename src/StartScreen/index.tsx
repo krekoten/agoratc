@@ -7,9 +7,13 @@ interface StartParams {
 }
 
 function StartScreen({ onStart }: StartParams): JSX.Element {
-  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", margin: 2}}>
-    <Button className="start" variant="contained" onClick={onStart}>Start the Quiz</Button>
-  </Box>
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", margin: 2 }}>
+      <Button className="start" variant="contained" onClick={onStart}>
+        Start the Quiz
+      </Button>
+    </Box>
+  )
 }
 
 export default StartScreen
