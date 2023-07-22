@@ -25,7 +25,7 @@ function QuestionScreen({ question: { text, answers }, onCorrectAnswer, onIncorr
     setOption(null)
   }
 
-  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "left"}}>
+  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "left", margin: 2}}>
     <QuestionText text={text} />
     <Answers answers={answers} value={option} onChange={(value: string) => { setOption(Number(value)) }} />
     <Button className="next" variant="contained" color="primary" onClick={onClick}>Next</Button>

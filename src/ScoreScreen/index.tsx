@@ -7,7 +7,7 @@ interface ScoreParams {
 }
 
 function ScoreScreen({ score, onRestart }: ScoreParams): JSX.Element {
-  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+  return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", margin: 2}}>
       <Typography variant="h5">Final score</Typography>
       <Typography variant="h6" className="score">{score}</Typography>
       <Button className="restart" variant="contained" color="primary" onClick={onRestart}>Restart</Button>
