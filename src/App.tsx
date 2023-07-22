@@ -38,12 +38,18 @@ function App(): JSX.Element {
     nextQuestionOrScore()
   }
 
+  function onRestart(): void {
+    setScore(0)
+    setQuestionNumber(0)
+    setState(appState.STARTED)
+  }
+
   return (
     <Container maxWidth="sm" sx={{p: 2}}>
       <Typography variant="h4">Agoracom - Tech Challenge - Quiz</Typography>
       {state === appState.STARTED && <StartScreen onStart={() => { setState(appState.QUESTIONS) }} />}
       {state === appState.QUESTIONS && <QuestionScreen question={question} onCorrectAnswer={onCorrectAnswer} onIncorrectAnswer={nextQuestionOrScore} />}
-      {state === appState.SCORE && <ScoreScreen score={score} />}
+      {state === appState.SCORE && <ScoreScreen score={score} onRestart={onRestart} />}
     </Container>
   )
 }

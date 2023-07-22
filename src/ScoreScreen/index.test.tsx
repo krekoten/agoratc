@@ -1,12 +1,13 @@
 import React from "react"
 import ScoreScreen from ".";
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 
 describe("ScoreScreen", () => {
   const score = 5
+  const onRestart = jest.fn()
 
   beforeEach(() => {
-    render(<ScoreScreen score={score} />)
+    render(<ScoreScreen score={score} onRestart={onRestart} />)
   })
 
   it("renders score", () => {
@@ -21,5 +22,13 @@ describe("ScoreScreen", () => {
     
     expect(restartButton).toBeInTheDocument()
     expect(restartButton).toHaveClass("restart")
+  })
+
+  describe("Restart button", () => {
+    it("calls onRestart handler", () => {
+      fireEvent.click(screen.getByRole("button", { name: "Restart" }))
+
+      expect(onRestart).toBeCalledTimes(1)
+    })
   })
 })

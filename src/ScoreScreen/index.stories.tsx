@@ -13,5 +13,5 @@ export default meta
 type Story = StoryObj<typeof ScoreScreen>
 
 export const Layout: Story = {
-  render: () => <ScoreScreen score={5} />,
+  render: () => <ScoreScreen score={5} onRestart={() => {}} />,
 };
