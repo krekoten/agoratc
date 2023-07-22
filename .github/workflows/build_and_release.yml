@@ -8,6 +8,9 @@ env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   GAR_LOCATION: us-east1
   REGION: global
+permissions:
+  contents: 'read'
+  id-token: 'write'
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
