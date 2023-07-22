@@ -1,7 +1,7 @@
 import React from "react"
 import { render, screen, fireEvent } from "@testing-library/react"
 
-import StartScreen from "."
+import StartScreen from ".."
 
 describe("StartScreen", () => {
   const handleClick = jest.fn()

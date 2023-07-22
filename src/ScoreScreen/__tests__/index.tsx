@@ -1,5 +1,5 @@
 import React from "react"
-import ScoreScreen from "."
+import ScoreScreen from ".."
 import { render, screen, fireEvent } from "@testing-library/react"
 
 describe("ScoreScreen", () => {
